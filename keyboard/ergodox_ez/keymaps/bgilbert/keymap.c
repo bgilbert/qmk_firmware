@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | Esc    |   1  |   2  |   3  |   4  |   5  | Calc |           |  `   |   6  |   7  |   8  |   9  |   0  |  Home  |
+ * | Esc    |   1  |   2  |   3  |   4  |   5  |      |           |  `   |   6  |   7  |   8  |   9  |   0  |  Home  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | VolUp  |   Q  |   W  |   E  |   R  |   T  | Del  |           | Bksp |   Y  |   U  |   I  |   O  |   P  |  PgUp  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   | Play | Trk< | Trk> | LGui | Bksp |                                       |  L1  |  Up  | Down | Left | Right|
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
- *                                        |      |      |       | RCtl | RShift |
+ *                                        |      | Calc |       | RCtl | RShift |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 | Shift| Ctrl | Menu |       |      | Enter  |Space |
  *                                 |      |      |------|       |------|        |      |
@@ -31,12 +31,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_CALC,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,
         KC_VOLU, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DEL,
         KC_VOLD, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
         KC_MUTE, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,
         KC_MPLY, KC_MPRV, KC_MNXT, KC_LGUI, KC_BSPC,
-                                                    KC_NO,   KC_NO,
+                                                    KC_NO,   KC_CALC,
                                                              KC_APP,
                                            KC_LSFT, KC_LCTL, KC_LALT,
         // right hand
