@@ -4,12 +4,13 @@
 
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
+#define NUMR 2 // numeric keypad
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | Esc    |   1  |   2  |   3  |   4  |   5  |      |           |  `   |   6  |   7  |   8  |   9  |   0  |  Home  |
+ * | Esc    |   1  |   2  |   3  |   4  |   5  | L2   |           |  `   |   6  |   7  |   8  |   9  |   0  |  Home  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | VolUp  |   Q  |   W  |   E  |   R  |   T  | Del  |           | Bksp |   Y  |   U  |   I  |   O  |   P  |  PgUp  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -31,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TG(NUMR),
         KC_VOLU, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DEL,
         KC_VOLD, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
         KC_MUTE, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,
@@ -91,6 +92,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
 ),
+/* Keymap 2: Numeric keypad
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |        |      |      |      |      |      |      |           |      |      |   (  |   )  |      |   /  |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |   7  |   8  |   9  |   *  |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |------|           |------|      |   4  |   5  |   6  |   -  |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |   1  |   2  |   3  |   +  |        |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                       |   0  |  Ent |   .  |   =  |      |
+ *   `----------------------------------'                                       `----------------------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |------|       |------|      |      |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
+ */
+// SYMBOLS
+[NUMR] = KEYMAP(
+       // left hand
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                       KC_TRNS, KC_TRNS,
+                                                KC_TRNS,
+                              KC_TRNS, KC_TRNS, KC_TRNS,
+       // right hand
+       KC_TRNS, KC_TRNS, KC_LPRN, KC_RPRN, KC_NO,   KC_SLSH, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_7,    KC_8,    KC_9,    KC_ASTR, KC_TRNS,
+                KC_TRNS, KC_4,    KC_5,    KC_6,    KC_MINS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_1,    KC_2,    KC_3,    KC_PLUS, KC_TRNS,
+                         KC_0,    KC_ENT,  KC_DOT,  KC_EQL,  KC_TRNS,
+       KC_TRNS, KC_TRNS,
+       KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS
+),
 };
 
 const uint16_t PROGMEM fn_actions[] = {
@@ -107,8 +150,8 @@ void matrix_scan_user(void) {
     ergodox_right_led_2_off();
     ergodox_right_led_3_off();
     switch (layer) {
-        case 1:
-            //ergodox_right_led_1_on();
+        case NUMR:
+            ergodox_right_led_1_on();
             break;
         default:
             // none
