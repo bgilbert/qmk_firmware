@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |  !   |  @   |  #   |  $   |  %   |      |           |      |      |  =   |  -   |  _   |  +   |   F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |  ^   |  &   |  *   |  ;   |  :   |------|           |------|      |  (   |  )   |  [   |  ]   |        |
+ * |        |  ^   |  &   |  *   |  :   |  ~   |------|           |------|      |  (   |  )   |  [   |  ]   |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |  \   |  |   |  "   |  '   |  ?   |      |           |      |      |  {   |  }   |  <   |  >   |  Calc  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // left hand
        KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_TRNS,
        KC_TRNS, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_TRNS,
-       KC_TRNS, KC_CIRC, KC_AMPR, KC_ASTR, KC_SCLN, KC_COLN,
+       KC_TRNS, KC_CIRC, KC_AMPR, KC_ASTR, KC_COLN, KC_TILD,
        KC_TRNS, KC_BSLS, KC_PIPE, KC_DQUO, KC_QUOT, KC_QUES, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                        KC_TRNS, KC_TRNS,
