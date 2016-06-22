@@ -12,11 +12,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * | Esc    |   1  |   2  |   3  |   4  |   5  |  `   |           |  L2  |   6  |   7  |   8  |   9  |   0  |  Home  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | VolUp  |   Q  |   W  |   E  |   R  |   T  | Del  |           | Bksp |   Y  |   U  |   I  |   O  |   P  |  PgUp  |
+ * | Mute   |   Q  |   W  |   E  |   R  |   T  | Del  |           | Bksp |   Y  |   U  |   I  |   O  |   P  |  PgUp  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | VolDn  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  PgDn  |
+ * | VolUp  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  PgDn  |
  * |--------+------+------+------+------+------|      |           | Tab  |------+------+------+------+------+--------|
- * | Mute   |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  |  End   |
+ * | VolDn  |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  |  End   |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | Play | Trk< | Trk> | LGui | Bksp |                                       |  L1  |  Up  | Down | Left | Right|
  *   `----------------------------------'                                       `----------------------------------'
@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_GRV,
-        KC_VOLU, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DEL,
-        KC_VOLD, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
-        KC_MUTE, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,
+        KC_MUTE, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DEL,
+        KC_VOLU, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
+        KC_VOLD, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,
         KC_MPLY, KC_MPRV, KC_MNXT, KC_LGUI, KC_BSPC,
                                                     KC_SPC,  KC_NO,
                                                              KC_APP,
